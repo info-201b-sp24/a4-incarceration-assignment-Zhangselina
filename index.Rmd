@@ -1,71 +1,51 @@
 ---
-title: "A3: Incarceration"
+title: "A4: Incarceration"
 output: html_document
 ---
 
+
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+Incarceration rates in the United States have been a topic of significant concern due to their social, economic, and human impacts. Understanding the trends and distribution of the prison population across different states and demographic groups is crucial for policy-making and reforms. This analysis focuses on the total prison population as the variable of interest to identify trends over time, variations across states, and potential factors influencing incarceration rates.
+
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+```{r, warning=FALSE, message=FALSE, echo = FALSE, code = readLines("HW_4.R")}
+```
+**The dataset used for this analysis contains detailed information on incarceration trends in the U.S., covering data from 1970 to 2018. Here are five key summary statistics derived from the dataset:**
+1.	Average Prison Population: The average total prison population across all years and states is 36136 individuals.
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
+2.	Highest Prison Population: The highest recorded total prison population in a single state-year is 5806800 individuals.
 
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
+3.	Lowest Prison Population: The lowest recorded total prison population in a single state-year is 0 individuals.
 
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+4.	Median Prison Population: The median total prison population across all years and states is 7600 individuals.
+
+5.	Standard Deviation of Prison Population: The standard deviation of the total prison population is 1,63968 individuals, indicating a wide range of prison population sizes across different states and years.
+
 
 ### The Dataset
 
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
-
+The "Incarceration Trends Dataset" was collected by the Vera Institute of Justice, using data from the Bureau of Justice Statistics (BJS), including the Census of Jails (COJ) and the Annual Survey of Jails (ASJ). It aims to provide a comprehensive overview of incarceration trends in the U.S. for researchers and policymakers. The dataset, with 153,811 observations and 36 features, includes details such as year, state, county, total population, and prison population. Ethical considerations involve ensuring privacy, addressing biases, and using the data responsibly. Limitations include potential inaccuracies, inconsistent temporal and geographic coverage, and aggregation that may obscure details. Despite these, the dataset is valuable for understanding incarceration dynamics and informing policy.
 
 ### Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+``````{r, warning=FALSE, message=FALSE, echo = FALSE, code = readLines("chart1.R")}
 ```
+
+The chart titled "Trend of Total Prison Population Over Time (1970-2018)" illustrates the changes in the total prison population across California, Colorado, Florida, New York, and Texas. The chart reveals a significant increase in prison populations from 1970 to the early 2000s, with California and Texas having the highest peaks. While California and New York show a slight decrease in recent years, other states like Texas continue to see fluctuations. This visualization highlights the overall increase in incarceration rates, variations across states, and potential factors such as state policies and economic conditions that influence these trends. By comparing multiple states, the analysis underscores the importance of understanding incarceration dynamics for effective policy-making and prison reform efforts.
 
 ### Variable Comparison Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+``````{r, warning=FALSE, message=FALSE, echo = FALSE, code = readLines("chart2.R")}
+```
 
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
+The chart titled "Relationship between Total Population and Total Prison Population in Colorado" displays a scatter plot with a regression line, highlighting the correlation between the total population and the total prison population in Colorado from 1970 to 2018. The blue points represent the total prison population for each year, while the red regression line shows the overall trend. This analysis focuses on the total prison population as the variable of interest to identify trends over time, variations across states, and potential factors influencing incarceration rates. The chart effectively illustrates how the prison population has grown in relation to the overall population, emphasizing the significant impact of demographic changes and policy decisions on incarceration rates. By visualizing this relationship, the chart helps identify potential factors influencing incarceration trends and underscores the need for targeted policies to address these trends.
 
 ### Map
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+``````{r, warning=FALSE, message=FALSE, echo = FALSE, code = readLines("map.R")}
+```
 
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
-
+The map titled "Prison Population in the US by State" visually represents the distribution of the total prison population across the United States. The varying shades of green indicate the total prison population in each state, with darker shades representing higher populations. This analysis focuses on the total prison population as the variable of interest to identify trends over time, variations across states, and potential factors influencing incarceration rates. The map clearly shows that states like Texas, California, and Florida have the highest prison populations, which highlights significant variations across states. Understanding these differences is crucial for policymakers to address the unique challenges and influences driving incarceration rates in different regions. The visualization provides a comprehensive overview of how prison populations are distributed across the country, aiding in the identification of patterns and informing targeted interventions for prison reform.
